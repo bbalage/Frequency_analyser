@@ -4,13 +4,13 @@ accept_list = [" ","\n"]
 def prep(sourcetext):
   text = sourcetext.lower()
   i = 0
-  textlist = list(text)
+  text_list = list(text)
   newtext_list = []
-  for c in textlist:
+  for c in text_list:
     if c in swap_dict:
-      textlist[i]=swap_dict[c]
+      text_list[i]=swap_dict[c]
     if c.isalpha() or c in accept_list:
-      newtext_list.append(textlist[i])
+      newtext_list.append(text_list[i])
     i+=1
   return newtext_list
 
