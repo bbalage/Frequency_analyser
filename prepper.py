@@ -56,6 +56,7 @@ def prep(sourcetext, language_name):
 def prep_from_file(sourcename, language_name):
   source = open(sourcename, "r")
   text = source.read()
+  source.close()
   return prep(text, language_name)
 
 def init_from_default_languages():
@@ -67,6 +68,7 @@ def learn_from_source(sourcename, language_name):
   lang = fetch_language_by_name(language_name)
   source = open(sourcename, "r")
   source_text = source.read()
+  source.close()
   for c in source_text:
     if c in lang.abc:
       lang.frequency[c] += 1
